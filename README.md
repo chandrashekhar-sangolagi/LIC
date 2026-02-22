@@ -9,6 +9,7 @@ which is achieved by setting dc bias point or Q point .
 
 Here three anyalsis are performed
 1) DC anyalsis - to find operating bias point
+
 2)transient anyalsis -to get gain of mosfet
 3) AC anyalsis - to frequency response and to get bandwidth 
 
