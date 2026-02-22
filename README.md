@@ -62,7 +62,7 @@ W = 5.95 × (180 × 10^-9)
 W ≈ 1.07u
 
 
-schematic
+
 
 
 
@@ -78,12 +78,11 @@ Procedure
 6) connect a voltage source to gate and  set it to 0.9v
 7)Connect all components properly using wires
 8)Now click on simute
-9)Select “Operating Point”
+9)Select Operating Point
 10)Click ok and place the .op command on the schematic
 11)Click on the Run button
 
-
-DC O.P IMAGE
+![Image description](https://github.com/chandrashekhar-sangolagi/LIC/blob/main/WhatsApp%20Image%202026-02-22%20at%202.29.36%20PM.jpeg)
 
 
 Conclusion 
@@ -100,10 +99,13 @@ Procedure
 3)Run simulation and plot Vin and Vout
 
 
-output image GRAPH
+Output graph
+
+![Image description](https://github.com/chandrashekhar-sangolagi/LIC/blob/main/WhatsApp%20Image%202026-02-22%20at%202.27.22%20PM%20(1).jpeg)
 
 
-INPUT IMAGE GRAPH
+Input graph
+![Image description](https://github.com/chandrashekhar-sangolagi/LIC/blob/main/WhatsApp%20Image%202026-02-22%20at%202.28.08%20PM%20(1).jpeg)
 
 
 Conclusion
@@ -132,16 +134,16 @@ practical gain is almost equal to theortical gain
 
 # Ac anyalsis
 
-
-image
-
-
 Procedure
 
 after connecting the components as required
 Add AC analysis command .ac dec 100 0.1 100G.
 Run the simulation.
 Plot output voltage and observe frequency response.
+
+Output Expected graph
+
+![Image description](https://github.com/chandrashekhar-sangolagi/LIC/blob/main/WhatsApp%20Image%202026-02-22%20at%202.26.31%20PM.jpeg)
 
 Conclusion 
 using the measured gain Av =2.295 and calculated band width of approximately 428.5khz
