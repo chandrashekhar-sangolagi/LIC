@@ -11,9 +11,10 @@ Here three anyalsis are performed
 1) DC anyalsis - to find operating bias point
 
 2)transient anyalsis -to get gain of mosfet
+
 3) AC anyalsis - to frequency response and to get bandwidth 
 
-#Design of circuit 
+ Design of circuit
 
 ![Image description](https://github.com/chandrashekhar-sangolagi/LIC/blob/main/Screenshot%202026-02-22%20215435.png)
 
