@@ -14,7 +14,7 @@ Here three anyalsis are performed
 
 #Design of circuit 
 
-![Image description](Screenshot 2026-02-22 215435.png)
+![Image description](https://github.com/chandrashekhar-sangolagi/LIC/blob/main/Screenshot%202026-02-22%20215435.png)
 
 DESIGN CALCULATIONS
 
