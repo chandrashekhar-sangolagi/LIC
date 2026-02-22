@@ -14,6 +14,8 @@ Here three anyalsis are performed
 
 #Design of circuit 
 
+![Image description](Screenshot 2026-02-22 215435.png)
+
 DESIGN CALCULATIONS
 
 Given:
