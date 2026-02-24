@@ -46,11 +46,11 @@ P = 0.3 mW
 
 Given:
 
-ID = 200 uA = 200 × 10⁻⁶ A, un = 273.8094 x 10^-4 ,Cox = 8.616 × 10^-3 ,VGS = 0.9 V ,VT = 0.366 V ,L = 180 nm
+ID = 200 uA = 200 × 10⁻⁶ A, un = 273.8094 x 10^-4 ,Cox = 8.616 × 10^-3 ,VGS = 0.9 V (satisfies saturation region condition VDS >VGS-VT),VT = 0.366 V ,L = 180 nm
 
 Vov = VGS − VT
 
-Vov = 0.9 − 0.366
+Vov = 0.9 − 0.366,
 Vov = 0.534 V
 
 unCox = un × Cox
