@@ -144,7 +144,10 @@ Avdb=20 logav
 Gain calculation(theortical)
 
 Av =gm x rd
-gm =2id/vgs-vt
+
+
+gm =2id/vgs-vt( decides gain of amplifier)
+
 gm =0.74 x10^-3
 rd =3.75 x10^3
 Av = 0.74x 3.75=2.7
