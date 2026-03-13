@@ -11,7 +11,7 @@ in the saturation region, which is required for linear amplification.
 #  Circuit description  
 The implemented circuit is a single stage common source amplifier.
 
-![Image description](PASTE_FILENAME_HERE)
+![Image description](WhatsApp Image 2026-03-10 at 11.22.03 PM (1).jpeg)
 Source Resistor (R1)
 A 1 kΩ resistor is connected to the source of the NMOS transistor. This resistor sets the source voltage and helps stabilize the operating point.
 NMOS Transistor (M1)
