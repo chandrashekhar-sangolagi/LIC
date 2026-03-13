@@ -182,7 +182,9 @@ W=4.995u
 ![Image description](https://github.com/chandrashekhar-sangolagi/LIC/blob/main/WhatsApp%20Image%202026-03-10%20at%2011.22.03%20PM.jpeg)
 
 
-##Conclusion
+## Conclusion
+
+
 Initially, smaller transistor widths did not provide the expected bias 
 current and output behavior(ID=200uA,VOUT=0.95). By increasing the width of the NMOS and PMOS 
 transistors, the required drain current and proper operating point were achieved.
