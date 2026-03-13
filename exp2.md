@@ -234,7 +234,7 @@ Procedure
 7. Observe the Output Response
 
 
-![Image description](![Image description](https://github.com/chandrashekhar-sangolagi/LIC/blob/main/WhatsApp%20Image%202026-03-10%20at%2011.22.03%20PM%20(1).jpeg))
+![Image description](![Image description](https://github.com/chandrashekhar-sangolagi/LIC/blob/main/WhatsApp%20Image%202026-03-10%20at%2011.22.03%20PM%20(2).jpeg))
 
 
 Gain bandwidth product
