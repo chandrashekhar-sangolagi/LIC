@@ -204,11 +204,13 @@ Av(db)=20.2946
 The Transient analysis shows that the amplifier produces an output 
 signal approximatelyFrom the transient simulation results, it is 
 observed that the output waveform has an amplitude nearly 10.34 times
-higher than the input signal, confirming that the circuit functions effectively as a voltage amplifier.
+higher than the input signal, confirming that the circuit functions effectively as a voltage amplifier
 10.34 times larger than the input signal confirming the amplification capability of the circuit
 
 
 #  AC  Anyalsis
+
+Procedure
 
 1. Open the Circuit
 
@@ -224,18 +226,69 @@ higher than the input signal, confirming that the circuit functions effectively 
 
 7. Observe the Output Response
 
-The plot shows gain vs frequency (Bode plot).
-Procedure
+
+
 
 
 image
 
-Frequency Response Results
-Midband Gain  	−3 dB Gain  	Bandwidth
-20.278 dB    	17.33 dB	  315.183 MHz
-The AC analysis shows that the amplifier provides a midband gain of 20.278 dB.
-At the −3 dB point, the gain reduces to 17.278 dB, and the measured bandwidth is 315.183 MHz.
 
+Gain bandwidth product
+
+GBP=10.345 x 316.68 Mhz
+GBP=3.269Ghz
+
+Unity gain Bandwidth
+UGB=3.645 GHz
+
+# Conclusion
+
+The results confirm that the amplifier achieves a good balance between gain and bandwidth
+while maintaining proper biasing, headroom, and device saturation. The use of a PMOS active load
+improves the output resistance and overall gain performance.
+
+Thus, the designed amplifier demonstrates satisfactory high-frequency performance and 
+validates the effectiveness of the CMOS design implemented using the 180 nm technology.
+
+
+
+
+# Result
+
+The CMOS common source amplifier using an NMOS transistor as the amplifying device and a
+PMOS transistor as an active load was successfully designed and simulated using TSMC 180 nm
+technology in LTspice.From the DC operating point analysis, it was verified that both
+NMOS and PMOS transistors operate in the saturation region, ensuring proper biasing of 
+the amplifier. Adequate headroom and legroom were observed, allowing the output node to swing 
+without forcing the transistors into the triode region.
+The AC analysis of the circuit shows that the amplifier achieves a midband gain of 
+approximately 20.278 dB, which corresponds to a linear voltage gain of about 10.345 V/V. 
+The −3 dB gain point occurs at approximately 17.278 dB and the bandwidth of the amplifier
+is around 315–316 MHz. Using these values, the Gain Bandwidth Product (GBP) is calculated to be 
+approximately 3.27 GHz. The unity gain bandwidth observed from the frequency response is about 3.645 GHz.
+From the transient analysis, when a sinusoidal input signal was applied
+to the amplifier, the output waveform was found to be amplified and inverted.
+The output signal amplitude was approximately 10.34 times larger than the input signal, 
+confirming the amplification capability of the circuit.
+
+
+# Inference
+
+The results obtained from DC, AC, and transient analyses confirm that the designed CMOS
+common source amplifier operates correctly and satisfies the expected performance 
+characteristics. Proper biasing ensures that the MOS transistors remain in the 
+saturation region, which is necessary for linear amplification.
+The AC analysis demonstrates that the amplifier provides sufficient gain with
+a relatively wide bandwidth, indicating good high-frequency performance. 
+The calculated gain bandwidth product and unity gain bandwidth further show 
+that the amplifier can operate effectively over a wide range of frequencies.
+The transient response verifies the time-domain behavior of the circuit, showing
+that the amplifier produces an amplified output signal with phase inversion, which
+is characteristic of a common source configuration.
+Overall, the circuit achieves a good balance between gain, bandwidth, and stability.
+The use of a PMOS active load improves the effective output resistance and gain,
+while the source degeneration resistor enhances bias stability and linearity. Hence,
+the designed amplifier performs satisfactorily for analog signal amplification applications.
 
 
 
