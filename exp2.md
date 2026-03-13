@@ -1,4 +1,4 @@
-## Introduction
+# Introduction
 
 In this project a CMOS common source amplifier is designed and simulated
 using TSMC 180 nm technology in LTspice. The circuit consists of an NMOS transistor 
@@ -8,31 +8,31 @@ A source resistor is included to establish the source voltage and stabilize the
 operating point. Proper biasing is selected so that the NMOS transistor operates 
 in the saturation region, which is required for linear amplification.
 
-## Circuit description  
+# Circuit description  
 The implemented circuit is a single stage common source amplifier.
 
 ![Image description](https://github.com/chandrashekhar-sangolagi/LIC/blob/main/WhatsApp%20Image%202026-03-10%20at%2011.22.03%20PM%20(1).jpeg)
 
 
-# NMOS Transistor (M1)
+## NMOS Transistor (M1)
 
 The NMOS transistor acts as the main amplifying device. The input signal is 
 applied to the gate of the NMOS transistor. Small variations in the gate voltage cause chan
 
-# PMOS Transistor (M2)
+## PMOS Transistor (M2)
 
 The PMOS transistor acts as an active load. It is connected to
 the supply voltage and provides the bias current required for the NMOS transistor. 
 Using an active load improves the voltage gain compared to a simple resistor load.
 
-# Source Resistor (R1)
+## Source Resistor (R1)
 
 
 A resistor is connected to the source of the NMOS transistor. This resistor sets the source
 voltage and helps stabilize the operating point.vides the bias current required for the NMOS transistor. 
 Using an active load improves the voltage gain compared to a simple resistor load.
 
-##   Theoretical Design Calculations
+#  Theoretical Design Calculations
 
 given  power =  0.5w(max)
 
@@ -59,7 +59,7 @@ Rs=  1k ohm
 
 The overdrive voltage determines the strength of inversion and the current capability of the device.
 
-# Calculation
+## Calculation
 
 VGS = VG − VS  
 
@@ -79,7 +79,7 @@ VGS = 0.61 V
 
 Vov = 0.25 V
 
-# Acceptable Overdrive Range
+## Acceptable Overdrive Range
 
 Minimum Vov: > 0  
 
@@ -113,7 +113,7 @@ VG=0.86
 
 This gate bias ensures that the PMOS transistor operates in saturation and provides the required current.
 
-# Width calculation
+## Width calculation
 
 
 Id=200u A
@@ -126,7 +126,7 @@ w=200x10^-6x2x180n/uncox(o.25)^2
 
 w=11.82u
 
-# NMOS  gate  source  voltage
+## NMOS  gate  source  voltage
 
 For the NMOS transistor operating in saturation:
 
@@ -143,7 +143,7 @@ VG=0.61+0.2
 
 VG=0.81
 
-# NMOS  width  calculation
+## NMOS  width  calculation
 
 for  MOSFET in  saturation  region
 
@@ -158,9 +158,9 @@ w/l=23.37
 
 W=4.995u
 
-## DC Operating point
+# DC Operating point
 
-Procedure
+## Procedure
 
 1. Open the designed CMOS common source amplifier circuit in LTspice.
 
@@ -182,14 +182,14 @@ Procedure
 ![Image description](https://github.com/chandrashekhar-sangolagi/LIC/blob/main/WhatsApp%20Image%202026-03-10%20at%2011.22.03%20PM.jpeg)
 
 
-#Conclusion
+##Conclusion
 Initially, smaller transistor widths did not provide the expected bias 
 current and output behavior(ID=200uA,VOUT=0.95). By increasing the width of the NMOS and PMOS 
 transistors, the required drain current and proper operating point were achieved.
 The final dimensions used in the design  are  Wn=12.8u  and  Wp=37.16u
 
 
-# Output Swing Analysis Using Headroom and Legroom
+## Output Swing Analysis Using Headroom and Legroom
 
 1. Operating Condition of the Amplifier
 
@@ -201,7 +201,7 @@ The output voltage limits are determined by two constraints:
 1)NMOS legroom (lower output limit)
 2}PMOS headroom (upper output limit)
 
-#  NMOS Legroom (Lower Output Voltage Limit)
+##  NMOS Legroom (Lower Output Voltage Limit)
 Legroom represents the minimum output voltage required to keep the NMOS transistor in saturation.
 In the circuit, the source of the NMOS transistor is connected to a source resistor 
 Rs=1k 0hm  So  vs =0.2
@@ -210,7 +210,7 @@ for NMOS in  saturation  VDS>VOV
 
 Hence  minimum  output  swing is 0.2+0.25=0.45
 
-#  PMOS Headroom (Upper Output Voltage Limit)
+##  PMOS Headroom (Upper Output Voltage Limit)
 
 Headroom refers to the voltage margin required to keep the PMOS transistor in saturation.
 The PMOS source is connected to the supply voltage:
@@ -235,9 +235,9 @@ Vout(max)-Vout(min)
 
 =0.8
 
-## Transient  anyalsis
+# Transient  anyalsis
 
-# Procedure 
+## Procedure 
 
 1. Open the Circuit
 
@@ -263,7 +263,7 @@ Output image
 
 ![Image description](https://github.com/chandrashekhar-sangolagi/LIC/blob/main/WhatsApp%20Image%202026-03-10%20at%2011.22.03%20PM%20(3).jpeg)
 
-# Simulated Gain
+## Simulated Gain
 
 Vout(p-p)=0.206
 
@@ -282,7 +282,7 @@ Av(db)=20log(10.345)
 Av(db)=20.2946
 
 
-#  Conclsion
+##  Conclsion
 
 The Transient analysis shows that the amplifier produces an output 
 signal approximatelyFrom the transient simulation results, it is 
@@ -291,9 +291,9 @@ higher than the input signal, confirming that the circuit functions effectively 
 10.34 times larger than the input signal confirming the amplification capability of the circuit
 
 
-## AC  Anyalsis
+# AC  Anyalsis
 
-# Procedure
+## Procedure
 
 1. Open the Circuit
 
@@ -313,15 +313,15 @@ higher than the input signal, confirming that the circuit functions effectively 
 ![Image description](![Image description](https://github.com/chandrashekhar-sangolagi/LIC/blob/main/WhatsApp%20Image%202026-03-10%20at%2011.22.03%20PM%20(2).jpeg))
 
 
-# Gain bandwidth product
+## Gain bandwidth product
 
 GBP=10.345 x 316.68 Mhz
 GBP=3.269Ghz
 
-# Unity gain Bandwidth
+## Unity gain Bandwidth
 UGB=3.645 GHz
 
-# Conclusion
+## Conclusion
 
 The results confirm that the amplifier achieves a good balance between gain and bandwidth
 while maintaining proper biasing, headroom, and device saturation. The use of a PMOS active load
@@ -333,7 +333,7 @@ validates the effectiveness of the CMOS design implemented using the 180 nm tech
 
 
 
-## Result
+# Result
 
 The CMOS common source amplifier using an NMOS transistor as the amplifying device and a
 PMOS transistor as an active load was successfully designed and simulated using TSMC 180 nm
@@ -352,7 +352,7 @@ The output signal amplitude was approximately 10.34 times larger than the input 
 confirming the amplification capability of the circuit.
 
 
-## Inference
+# Inference
 
 The results obtained from DC, AC, and transient analyses confirm that the designed CMOS
 common source amplifier operates correctly and satisfies the expected performance 
