@@ -102,7 +102,8 @@ W=4.995u
 
 #  DC Operating point
 
-simulationimage 
+ 
+![Image description](https://github.com/chandrashekhar-sangolagi/LIC/blob/main/WhatsApp%20Image%202026-03-10%20at%2011.22.03%20PM.jpeg)
 
 
 #Conclusion
