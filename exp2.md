@@ -161,7 +161,7 @@ Vout(max)-Vout(min)
 
 #  Transient  anyalsis
 
-Procedure for Transient Analysis (LTspice) – Copyable Format
+Procedure 
 
 1. Open the Circuit
 
@@ -178,8 +178,14 @@ Procedure for Transient Analysis (LTspice) – Copyable Format
 6. Run the Simulation
 
 7. Observe the Waveforms
+   
+Input image
 
-image
+![Image description](https://github.com/chandrashekhar-sangolagi/LIC/blob/main/WhatsApp%20Image%202026-03-12%20at%201.34.51%20AM%20(6).jpeg)
+
+Output image
+
+![Image description](https://github.com/chandrashekhar-sangolagi/LIC/blob/main/WhatsApp%20Image%202026-03-10%20at%2011.22.03%20PM%20(3).jpeg)
 
 Simulated Gain
 
