@@ -401,7 +401,7 @@ To design and analyze a **Source Degenerated Common Source MOS amplifier** using
 
 # Circuit Diagram
 
-![Circuit Diagram](images/circuit.png)
+![Circuit Diagram](https://github.com/chandrashekhar-sangolagi/LIC/blob/main/WhatsApp%20Image%202026-03-15%20at%209.35.01%20PM.jpeg)
 
 *Figure: Source Degenerated Common Source Amplifier*
 
@@ -545,7 +545,7 @@ DC operating point analysis is performed to determine the **steady-state voltage
 
 ## Simulation Result
 
-![DC Operating Point](images/dc_operating_point.png)
+![DC Operating Point](https://github.com/chandrashekhar-sangolagi/LIC/blob/main/op%201.jpg)
 
 From simulation:
 
@@ -632,7 +632,14 @@ Transient analysis is used to observe the **time-domain response** of the amplif
 
 ## Simulation Result
 
-![Transient Response](images/transient_waveform.png)
+# Input Graph
+
+![Transient Response](https://github.com/chandrashekhar-sangolagi/LIC/blob/main/input.jpg)
+
+# Output graph 
+
+![Transient Response](https://github.com/chandrashekhar-sangolagi/LIC/blob/main/op%201.jpg)
+
 
 | Parameter | Value |
 |----------|------|
@@ -768,7 +775,7 @@ AC analysis determines the **frequency response** of the amplifier. It provides 
 
 ## Simulation Result
 
-![AC Analysis](images/ac_analysis.png)
+![AC Analysis](https://github.com/chandrashekhar-sangolagi/LIC/blob/main/ac%201.jpg)
 
 
 
