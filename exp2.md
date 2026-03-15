@@ -638,7 +638,7 @@ Transient analysis is used to observe the **time-domain response** of the amplif
 
 # Output graph 
 
-![Transient Response](https://github.com/chandrashekhar-sangolagi/LIC/blob/main/op%201.jpg)
+![Transient Response](https://github.com/chandrashekhar-sangolagi/LIC/blob/main/output%201.jpg)
 
 
 | Parameter | Value |
