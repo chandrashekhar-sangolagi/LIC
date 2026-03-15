@@ -374,4 +374,469 @@ the designed amplifier performs satisfactorily for analog signal amplification a
 
 
 
+# Source Degenerated Common Source Amplifier (TSMC 180nm)
+
+
+
+# Introduction
+
+Analog CMOS amplifiers are fundamental building blocks in many electronic systems such as signal processing circuits, sensors, and communication systems. Among various amplifier configurations, the **common source amplifier** is widely used because it provides good voltage gain and relatively simple implementation.
+
+In order to improve linearity and stabilize the operating point, **source degeneration** is introduced. Source degeneration introduces local negative feedback through a source transistor or resistor, which improves stability and reduces distortion.
+
+In this experiment, a **Source Degenerated Common Source MOS Amplifier** is designed using **TSMC 180 nm CMOS technology**. The design is evaluated through simulation to study important amplifier characteristics such as gain, bandwidth, unity gain bandwidth, and output swing.
+
+
+# Objective
+
+To design and analyze a **Source Degenerated Common Source MOS amplifier** using **TSMC 180 nm CMOS technology** and evaluate its performance in terms of:
+
+- Voltage Gain
+- Bandwidth
+- Unity Gain Bandwidth
+- Output Voltage Swing
+- DC Operating Point
+
+
+
+# Circuit Diagram
+
+![Circuit Diagram](images/circuit.png)
+
+*Figure: Source Degenerated Common Source Amplifier*
+
+The circuit consists of three MOS transistors:
+
+- **M1 (NMOS)** – Main amplifying transistor
+- **M2 (PMOS)** – Active load transistor
+- **M3 (NMOS)** – Source degeneration transistor
+
+The input signal is applied at the **gate of M1**, while the amplified output is obtained from the **drain node (Vout)**.
+
+
+# Design Specifications
+
+| Parameter | Value |
+|----------|------|
+| Technology | TSMC 180 nm |
+| Supply Voltage VDD | 1.5 V |
+| Power Constraint | ≤ 0.5 mW |
+| Load Capacitance CL | 1 pF |
+| Channel Length L | 180 nm |
+
+
+# Bias Current Calculation
+
+The bias current is determined using the power constraint.
+
+
+P ≤ VDD × ID
+
+
+Substituting the given values:
+
+
+0.5 mW ≥ 1.5 × ID
+
+
+ID ≤ 0.33 mA
+
+
+Chosen operating current:
+
+
+ID = 200 µA
+
+
+
+# Assumption of Overdrive Voltage
+
+VOV = 0.25 V
+
+### Justification
+
+- Maintains balance between **power consumption and gain**
+- Ensures MOS transistor operates in **strong inversion region**
+- Lower VOV improves **transconductance (gm)**
+
+## Bottom NMOS (M3)
+
+The lower NMOS transistor establishes the required bias current for the cascode stage.
+
+| Parameter | Calculation | Value |
+|-----------|-------------|-------|
+| VGS3 | VTHn + Vov | 0.36 + 0.25 = **0.61 V** |
+| Gate Voltage | Bias value | **0.61 V** |
+| Source Voltage | Ground | **0 V** |
+
+
+Thus **M3 operates in saturation** and provides the required current source.
+
+
+## Cascode NMOS (M1)
+
+The cascode transistor improves the output resistance and increases the gain of the amplifier.
+
+| Parameter | Calculation | Value |
+|-----------|-------------|-------|
+| Gate Voltage | Given | **0.81 V** |
+
+### Saturation Verification
+
+| Condition | Result |
+|----------|--------|
+| VDS1 ≥ Vov | **0.566 ≥ 0.25 ✔** |
+
+Hence **M1 operates in saturation**, ensuring proper cascode operation.
+
+
+## PMOS Active Load (M2)
+
+The PMOS transistor acts as an active load and provides the bias current for the amplifier.
+
+| Parameter | Calculation | Value |
+|-----------|-------------|-------|
+| Source Voltage | VDD | **1.5 V** |
+| Gate Voltage | Given | **0.86 V** |
+| VSG2 | VS − VG | **1.5 − 0.86 = 0.64 V** |
+
+Thus the **PMOS active load operates in saturation**.
+
+
+
+
+# Width Calculation
+
+Using MOSFET saturation equation:
+(NMOS Width)
+
+
+ID = (μnCox /2) × (W/L) × (VOV)^2
+
+
+After substituting parameters:
+
+
+W ≈ 11.83 um
+
+Using MOSFET saturaion equation:
+(pmos width)
+
+Id =(upcox/2)xw/Lxvov^2
+
+after substituting parameters we get 
+
+w =5um
+
+
+# DC Operating Point Analysis
+
+## Introduction
+
+DC operating point analysis is performed to determine the **steady-state voltages and currents** of the circuit without any time-varying signals. This analysis ensures that all MOS transistors operate in the **saturation region**, which is necessary for proper amplification.
+
+## Procedure
+
+1. Construct the circuit in LTspice using TSMC 180nm transistor models.
+2. Apply the required DC supply voltage \(VDD = 1.5V\).
+3. Assign the calculated bias voltages to the circuit nodes.
+4. Run **.op analysis** to obtain the DC operating point.
+5. Observe node voltages and device currents.
+
+## Simulation Result
+
+![DC Operating Point](images/dc_operating_point.png)
+
+From simulation:
+
+ We got expected VOUT ≈ 0.85 V after adjusting width values durin g
+ Simulation
+
+
+# Width Scaling in Simulation
+
+| Transistor | Width |
+|-----------|------|
+| PMOS | 36.58 µm |
+| NMOS1 | 60.3 µm |
+| NMOS3 | 16.3 µm |
+
+This confirms that the amplifier is properly biased and operating in the saturation region.
+
+
+
+# Output Swing
+
+## Maximum Output Voltage
+
+For PMOS to remain in saturation:
+
+VDD − VOUT ≥ VOV
+
+
+
+1.5 − VOUT ≥ 0.25
+
+
+
+VOUT,max ≈ 1.25 V
+
+
+## Minimum Output Voltage
+
+For NMOS to remain in saturation:
+
+VOUT − VS ≥ VOV
+
+
+
+VOUT,min ≈ 0.50 V
+
+# Output Swing Range
+
+| Parameter | Value |
+|----------|------|
+| VOUT,min | 0.50 V |
+| VOUT,max | 1.25 V |
+| Q-point | 0.875 V |
+
+
+# Headroom and Legroom
+
+### Headroom
+
+Headroom represents the voltage margin between **Vout and VDD**. It ensures the PMOS transistor stays in saturation.
+
+### Legroom
+
+Legroom is the voltage margin between **Vout and ground**, ensuring NMOS devices operate correctly.
+
+
+
+# Transient Analysis
+
+## Introduction
+
+Transient analysis is used to observe the **time-domain response** of the amplifier when an input signal is applied. This helps determine whether the amplifier correctly amplifies the input waveform.
+
+## Procedure
+
+1. Apply a sinusoidal input signal at the gate of M1.
+2. Set simulation command:
+
+.tran 5m
+
+3. Run the transient simulation.
+4. Observe the input and output waveforms.
+5. Measure peak-to-peak voltages.
+
+## Simulation Result
+
+![Transient Response](images/transient_waveform.png)
+
+| Parameter | Value |
+|----------|------|
+| VOUTpp | 53.98 mV |
+| VINpp | 19.18 mV |
+
+
+
+The voltage gain is obtained using:
+
+AV = VOUT / VIN
+
+AV = 53.98 / 19.18
+
+
+AV ≈ 2.811 V/V
+
+
+
+# Gain in dB
+
+
+Gain(dB) = 20 log10(AV)
+
+
+
+Gain ≈ 8.98dB
+
+
+
+# Theoretical Gain Calculation
+
+## Channel Length Modulation
+
+Typical values assumed:
+
+
+λn = 0.1 V⁻¹
+λp = 0.05 V⁻¹
+
+
+
+
+# Step 1: Transconductance
+
+
+gm = 2ID / VOV
+
+
+gm = (2 × 200×10⁻⁶) / 0.25
+
+
+
+gm ≈ 1.6 mS
+
+Since M1 and M3 carry the same current:
+
+gm1 = gm3 = 1.6 mS
+
+# Step 2: Output Resistance
+
+NMOS output resistance
+
+ro1 = 1 / (λn ID)
+
+
+
+ro1 ≈ 50 kΩ
+
+
+PMOS output resistance
+
+
+ro3 = 1 / (λp ID)
+
+
+
+ro3 ≈ 100 kΩ
+
+
+
+# Step 3: Effective Output Resistance
+
+
+ro,eff = ro1 || ro3
+
+
+ro,eff = (50k × 100k) / (50k + 100k)
+
+
+
+ro eff ≈ 33.33 kΩ
+
+
+# Step 4: Voltage Gain (With Source Degeneration)
+
+
+AV = − gm1 × ro,eff / (1 + gm1 ro2)
+
+
+
+AV ≈ −0.658 V/V
+
+
+
+# Theoretical Gain in dB
+
+
+AV(dB) = 20 log10(|AV|)
+
+
+AV(dB) ≈ −3.63 dB
+
+
+# AC Analysis
+
+## Introduction
+
+AC analysis determines the **frequency response** of the amplifier. It provides information about **midband gain, bandwidth, and cutoff frequencies**.
+
+## Procedure
+
+1. Add AC analysis command:
+
+
+.ac dec 100 0.1 5G
+
+
+2. Apply a small signal AC input.
+3. Run simulation.
+4. Plot the magnitude response.
+5. Measure midband gain and cutoff frequencies.
+
+## Simulation Result
+
+![AC Analysis](images/ac_analysis.png)
+
+|
+
+
+# −3 dB Frequency
+
+
+f3dB ≈ 6.60690 MHz
+
+---
+
+# Unity Gain Bandwidth
+
+
+UGB ≈ 17.742 MHz
+
+
+
+
+# Gain Bandwidth Product
+
+
+GBP = AV × f3dB
+
+GBP = 2.811*6.60690
+
+GBP ≈ 18.571 MHz
+
+
+UGB ≈ GBP
+
+
+# Frequency Performance Summary
+
+# Conclusion
+
+The AC analysis of the designed CMOS amplifier was successfully performed. 
+The voltage gain obtained from simulation is **Av ≈ 2.811** and the -3 dB bandwidth is **6.6069 MHz**. 
+
+Using these values, the Gain Bandwidth Product (GBP) is calculated as **18.571 MHz**, which is 
+close to the simulated **Unity Gain Bandwidth (UGB) ≈ 17.742 MHz**. 
+
+This confirms that the circuit is functioning correctly and the simulation results match the theoretical expectations.
+
+---
+
+# Conclusion
+
+A **Source Degenerated Common Source Amplifier** was successfully designed and simulated using **TSMC 180 nm CMOS technology**.
+
+The circuit operates correctly in the saturation region and satisfies the specified power constraint. Transient analysis confirms signal amplification, while AC analysis demonstrates adequate bandwidth.
+
+The simulated gain is approximately **8.49 dB**, which is higher than the theoretical estimate due to device non-idealities and simulation model effects.
+
+# Inference
+
+---
+
+# Inference
+
+From the performed analyses, the **Source Degenerated Common Source Amplifier** operates correctly under the given design specifications. The DC operating point confirms that all transistors remain in the **saturation region**, ensuring proper amplifier functionality.
+
+Transient analysis shows that the output signal has a larger amplitude than the input signal, verifying that the circuit provides **voltage amplification**. The practical gain obtained from simulation is approximately **2.81 V/V (8.49 dB)**.
+
+AC analysis indicates that the amplifier operates over a **wide bandwidth in the MHz range**. It is also observed that the **Unity Gain Bandwidth (UGB) is approximately equal to the Gain Bandwidth Product (GBP)**, which is consistent with theoretical amplifier behavior.
+
+Overall, the circuit satisfies the design requirements and demonstrates stable amplification performance.
+
+
+
 
