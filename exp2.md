@@ -263,7 +263,7 @@ Input image
 
 Output image
 
-![Image description](https://github.com/chandrashekhar-sangolagi/LIC/blob/main/WhatsApp%20Image%202026-03-10%20at%2011.22.03%20PM%20(3).jpeg)
+![Image description](https://github.com/chandrashekhar-sangolagi/LIC/blob/main/output%201.jpg)
 
 ## Simulated Gain
 
