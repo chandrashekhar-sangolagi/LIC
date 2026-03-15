@@ -1311,8 +1311,6 @@ capacitances, and practical MOSFET model parameters** used in simulation.
 Overall, the circuit meets the design requirements and demonstrates effective analog signal amplification.
 
 
-# AC Analysis
-
 
 # AC Analysis
 
