@@ -770,7 +770,7 @@ AC analysis determines the **frequency response** of the amplifier. It provides 
 
 ![AC Analysis](images/ac_analysis.png)
 
-|
+
 
 
 # −3 dB Frequency
@@ -778,12 +778,12 @@ AC analysis determines the **frequency response** of the amplifier. It provides 
 
 f3dB ≈ 6.60690 MHz
 
----
+
 
 # Unity Gain Bandwidth
 
 
-UGB ≈ 17.742 MHz
+UGB = 17.742 MHz
 
 
 
@@ -795,13 +795,11 @@ GBP = AV × f3dB
 
 GBP = 2.811*6.60690
 
-GBP ≈ 18.571 MHz
+GBP =18.571 MHz
 
 
-UGB ≈ GBP
+UGB =GBP
 
-
-# Frequency Performance Summary
 
 # Conclusion
 
@@ -813,7 +811,7 @@ close to the simulated **Unity Gain Bandwidth (UGB) ≈ 17.742 MHz**.
 
 This confirms that the circuit is functioning correctly and the simulation results match the theoretical expectations.
 
----
+
 
 # Conclusion
 
@@ -823,9 +821,6 @@ The circuit operates correctly in the saturation region and satisfies the specif
 
 The simulated gain is approximately **8.49 dB**, which is higher than the theoretical estimate due to device non-idealities and simulation model effects.
 
-# Inference
-
----
 
 # Inference
 
