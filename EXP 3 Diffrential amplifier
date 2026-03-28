@@ -1,1 +1,331 @@
+# Differential Amplifier Analysis
+
+---
+
+## 1. Introduction
+
+A MOSFET differential amplifier amplifies the **difference between two input signals** while rejecting common-mode signals. This is achieved using a matched transistor pair sharing a constant current source.
+
+Key properties:
+- High noise immunity
+- Linear amplification for small signals
+- Current steering for large signals
+
+Applications:
+- Operational amplifier input stages
+- Analog front-end circuits
+- Comparators
+
+---
+
+## 2. Circuit Description
+
+The circuit consists of:
+
+- **M1, M2 (NMOS)** → Differential pair  
+- **Tail current source (I1)** → Provides constant bias current  
+- **Load resistors (R1, R2)** → Convert current to voltage  
+- **Capacitor (C1 = 10 pF)** → Determines bandwidth  
+- **Supplies**:
+  - VDD = +0.9 V  
+  - VSS = −0.9 V  
+
+---
+
+## 3. Design Methodology
+
+### 3.1 Design Constraints
+
+| Parameter | Value |
+|----------|------|
+| Power (P) | 1.5 mW |
+| Supply Voltage | 1.8 V |
+| Tail Voltage (Vp) | −0.7 V |
+| Channel Length (L) | 360 nm |
+| μnCox | 236.5 µA/V² |
+
+---
+
+### 3.2 Extracted & Verified Calculations
+
+#### Total Current
+
+Iss= P / V  
+Iss = 1.5 mW / 1.8 V  
+Iss = 0.833 mA  
+
+---
+
+#### Branch Current
+
+ID = Iss / 2  
+ID = 0.833 / 2  
+ID = 0.4165 mA  
+
+---
+
+#### Overdrive Voltage
+
+VGS = VG − VS  
+VGS = 0 − (−0.7) = 0.7 V  
+
+VT ≈ 0.366 V  
+
+Vov = VGS − VT  
+Vov = 0.7 − 0.366  
+Vov = 0.334 V  
+
+---
+
+#### Width Calculation
+
+ID = (1/2) μnCox (W/L) Vov²  
+
+Rearranging:
+
+W = (2 ID L) / (μnCox Vov²)
+
+Substitute:
+
+W = (2 × 0.4165×10⁻³ × 360×10⁻⁹) / (236.5×10⁻⁶ × (0.334)²)
+
+W ≈ 11.38 µm  
+
+---
+
+#### Drain Resistance
+
+RD = 2.16 kΩ  
+
+---
+
+## 4. DC Analysis
+
+### 4.1 Objective
+
+To verify biasing and ensure MOSFETs operate in saturation.
+
+---
+
+### 4.2 Procedure
+
+- Apply DC sources  
+- Run `.op` simulation  
+
+---
+
+### 4.3 Output
+
+![DC Analysis](DC_IMAGE_HERE)
+
+---
+
+### 4.4 Verification
+
+VGS − VT = 0.334 V  
+
+From simulation:  
+VDS ≈ 0.7 V  
+
+Check condition:
+
+VDS ≥ VGS − VT  
+0.7 ≥ 0.334 ✔  
+
+it is working in saturation region
+
+---
+
+### 4.5 Conclusion
+
+- Equal current splitting achieved  
+- Both transistors in saturation  
+- expected value of saturation current of 0.4165mA
+
+---
+
+## 5. Transient Analysis
+
+### 5.1 Objective
+
+To verify time-domain response and linear operation.
+
+---
+
+### 5.2 Procedure
+
+Vin1 = +10 mV (sine)  
+Vin2 = −10 mV (sine)  
+Frequency = 1 kHz  
+
+---
+### Input image
+
+![Transient Response](TRANSIENT_IMAGE_HERE)
+
+### 5.3 Output
+
+![Transient Response](TRANSIENT_IMAGE_HERE)
+
+---
+
+### Analysis
+
+### 6.4 Gain Calculation
+
+#### Transconductance
+
+gm = 2ID / Vov  
+gm = (2 × 0.4165 mA) / 0.334  
+gm = 2.49 mS  
+
+---
+
+#### Theoretical Gain
+
+Av = −gm × RD  
+Av = −(2.49×10⁻³ × 2160)  
+Av = −5.38  
+
+Convert to dB:
+
+Av(dB) = 20 log10(5.38)  
+Av(dB) ≈ 14.6 dB  
+
+---
+
+#### Simulated Gain
+
+From AC plot: we got gain of each transistor as 2.29 so on further calculation
+
+
+Vout = V(out1) - V(out2)
+
+V(out1) = +2.29 × Vin  
+
+V(out2) = −2.29 × Vin  
+
+Vout = (+2.29 − (−2.29)) × Vin
+
+
+Vout = 4.58 × Vin  
+
+Vout/Vin = 4.58
+
+Av =4.58 v/v
+
+Av= 20 log(Av)
+
+Av=20 log (4.58)
+
+Av =13.217 db 
+
+
+---
+
+### 5.5 Conclusion
+
+- simulated gain is almost equal to theortical gain a small diffrence is 
+observed because 
+
+## Explanation of Deviation
+
+- Channel length modulation  
+- Parasitic capacitances  
+- Non-ideal current source  
+
+---
+
+## 6. AC Analysis
+
+### 6.1 Objective
+
+To determine gain and frequency response.
+
+---
+
+### 6.2 Procedure
+
+Use:
+
+.ac dec 10 0.1 100G  
+
+---
+
+### 6.3 Output
+
+![AC Response](AC_IMAGE_HERE)
+
+---
+
+
+
+## AC Verification 
+
+Given:
+- Gain = 2.28 V/V  
+- -3 dB frequency = 7.66 MHz  
+- Unity gain frequency = 15.22 MHz  
+
+---
+
+
+### GBW Calculation
+
+GBW = 2.28 *7.66 = 17.47 
+
+---
+
+### UGB Check
+
+Given:
+
+UGB = 15.22 \text{ MHz}
+
+✔ Close to GBW  
+
+---
+
+### Final Values
+
+- Gain = 2.28 V/V (7.16 dB)  
+- -3 dB = 7.66 MHz  
+- UGB = 15.22 MHz  
+- GBW = 17.47 MHz  
+
+
+---
+
+## 8. Conclusion
+
+- The measured gain of the amplifier is **2.28 V/V (7.16 dB)**.
+
+- The **-3 dB bandwidth is 7.66 MHz**, which satisfies the theoretical condition:
+
+- The calculated **Gain-Bandwidth Product (GBW) = 17.47 MHz**.
+
+- The measured **Unity Gain Bandwidth (UGB) = 15.22 MHz**, which is close to GBW.
+
+- This confirms that the amplifier approximately follows **single dominant pole behavior**, with slight deviation due to practical non-idealities.
+
+---
+
+## Final Conclusion and Result
+
+- A CMOS differential amplifier was successfully designed and analyzed.
+
+- The circuit achieved correct **DC biasing**, ensuring both transistors operate in saturation.
+
+- In transient analysis, the amplifier produced **proper differential sinusoidal outputs**, confirming correct operation in the linear region.
+- The AC response verified that:
+
+  - Gain = **2.28 V/V**
+
+  - Bandwidth = **7.66 MHz**
+
+  - Unity gain frequency = **15.22 MHz**
+
+- Theoretical and simulated results are in close agreement, validating the design methodology.
+
+✔ The amplifier meets expected performance and operates correctly under all analyses (DC, Transient, and AC).
 
