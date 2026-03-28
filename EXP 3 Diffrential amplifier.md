@@ -2,7 +2,7 @@
 
 ---
 
-## 1. Introduction
+##  Introduction
 
 A MOSFET differential amplifier amplifies the **difference between two input signals** while rejecting common-mode signals. This is achieved using a matched transistor pair sharing a constant current source.
 
@@ -18,7 +18,7 @@ Applications:
 
 ---
 
-## 2. Circuit Description
+##  Circuit Description
 
 Circuit diagram
 
@@ -39,9 +39,9 @@ The circuit consists of:
 
 ---
 
-## 3. Design Methodology
+##  Design Methodology
 
-### 3.1 Design Constraints
+###  Design Constraints
 
 | Parameter | Value |
 |----------|------|
@@ -53,7 +53,7 @@ The circuit consists of:
 
 ---
 
-### 3.2 Extracted & Verified Calculations
+###  Extracted & Verified Calculations
 
 #### Total Current
 
@@ -106,18 +106,18 @@ RD = 2.16 kΩ
 
 ---
 
-## 4. DC Analysis
+##  DC Analysis
 
-### 4.1 Objective
+### Objective
 
 To verify biasing and ensure MOSFETs operate in saturation.
 
 ---
 
-### 4.2 Procedure
+###  Procedure
 
 - Apply DC sources  
-- Run `.op` simulation  
+- Run .op simulation  
 
 ---
 
@@ -137,7 +137,7 @@ VDS ≈ 0.7 V
 Check condition:
 
 VDS ≥ VGS − VT  
-0.7 ≥ 0.334 ✔  
+0.7 ≥ 0.334 
 
 it is working in saturation region
 
@@ -151,15 +151,15 @@ it is working in saturation region
 
 ---
 
-## 5. Transient Analysis
+##  Transient Analysis
 
-### 5.1 Objective
+### Objective
 
 To verify time-domain response and linear operation.
 
 ---
 
-### 5.2 Procedure
+### Procedure
 
 Vin1 = +10 mV (sine)  
 Vin2 = −10 mV (sine)  
@@ -170,7 +170,7 @@ Frequency = 1 kHz
 
 ![Transient Response](https://github.com/chandrashekhar-sangolagi/LIC/blob/main/Screenshot%202026-03-28%20040811.png)
 
-### 5.3 Output
+###  Output
 
 ![Transient Response](https://github.com/chandrashekhar-sangolagi/LIC/blob/main/Screenshot%202026-03-28%20041005.png)
 
@@ -178,7 +178,7 @@ Frequency = 1 kHz
 
 ### Analysis
 
-### 6.4 Gain Calculation
+### Gain Calculation
 
 #### Transconductance
 
@@ -230,7 +230,7 @@ Av =13.217 db
 
 ---
 
-### 5.5 Conclusion
+###  Conclusion
 
 - simulated gain is almost equal to theortical gain a small diffrence is 
 observed because 
@@ -243,15 +243,15 @@ observed because
 
 ---
 
-## 6. AC Analysis
+##  AC Analysis
 
-### 6.1 Objective
+###  Objective
 
 To determine gain and frequency response.
 
 ---
 
-### 6.2 Procedure
+###  Procedure
 
 Use:
 
@@ -259,7 +259,7 @@ Use:
 
 ---
 
-### 6.3 Output
+### Output
 
 ![AC Response](https://github.com/chandrashekhar-sangolagi/LIC/blob/main/Screenshot%202026-03-28%20040722.png)
 
@@ -287,9 +287,9 @@ GBW = 2.28 *7.66 = 17.47
 
 Given:
 
-UGB = 15.22 \text{ MHz}
+UGB = 15.22 
 
-✔ Close to GBW  
+Close to GBW  
 
 ---
 
@@ -303,7 +303,7 @@ UGB = 15.22 \text{ MHz}
 
 ---
 
-## 8. Conclusion
+## Conclusion
 
 - The measured gain of the amplifier is **2.28 V/V (7.16 dB)**.
 
@@ -334,5 +334,5 @@ UGB = 15.22 \text{ MHz}
 
 - Theoretical and simulated results are in close agreement, validating the design methodology.
 
-✔ The amplifier meets expected performance and operates correctly under all analyses (DC, Transient, and AC).
+The amplifier meets expected performance and operates correctly under all analyses (DC, Transient, and AC).
 
