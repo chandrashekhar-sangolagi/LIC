@@ -20,6 +20,13 @@ Applications:
 
 ## 2. Circuit Description
 
+Circuit diagram
+
+![Transient Response](https://github.com/chandrashekhar-sangolagi/LIC/blob/main/Screenshot%202026-03-28%20042657.png)
+
+
+
+
 The circuit consists of:
 
 - **M1, M2 (NMOS)** → Differential pair  
@@ -116,7 +123,7 @@ To verify biasing and ensure MOSFETs operate in saturation.
 
 ### 4.3 Output
 
-![DC Analysis](DC_IMAGE_HERE)
+![DC Analysis](https://github.com/chandrashekhar-sangolagi/LIC/blob/main/Screenshot%202026-03-27%20051222.png)
 
 ---
 
@@ -161,11 +168,11 @@ Frequency = 1 kHz
 ---
 ### Input image
 
-![Transient Response](TRANSIENT_IMAGE_HERE)
+![Transient Response](https://github.com/chandrashekhar-sangolagi/LIC/blob/main/Screenshot%202026-03-28%20040811.png)
 
 ### 5.3 Output
 
-![Transient Response](TRANSIENT_IMAGE_HERE)
+![Transient Response](https://github.com/chandrashekhar-sangolagi/LIC/blob/main/Screenshot%202026-03-28%20041005.png)
 
 ---
 
@@ -254,7 +261,7 @@ Use:
 
 ### 6.3 Output
 
-![AC Response](AC_IMAGE_HERE)
+![AC Response](https://github.com/chandrashekhar-sangolagi/LIC/blob/main/Screenshot%202026-03-28%20040722.png)
 
 ---
 
@@ -310,7 +317,7 @@ UGB = 15.22 \text{ MHz}
 
 ---
 
-## Final Conclusion and Result
+##  Result
 
 - A CMOS differential amplifier was successfully designed and analyzed.
 
